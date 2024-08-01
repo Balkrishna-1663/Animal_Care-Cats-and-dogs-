@@ -105,7 +105,7 @@ internal class Program
 
                 case "2":
                     int petCount = 0;
-                    // The variable petcount is used to store the Vacancies for the pet.RefLn.193
+                    // The variable petcount is used to store the Vacancies for the pet.Reference Line.193
                  bool validEntry=false;
                     for (int i = 0; i < MaxPet; i++)
                     {
@@ -191,7 +191,7 @@ internal class Program
                             }
                             else validEntry = true;
 
-                     //The petcount is used here ref.Ln 108.
+                     //The petcount is used here reference .Line 108.
                      //stores the data according to the petcount.
                         OurAnimal[petCount, 0] = "ID #: " + PetId;
                         OurAnimal[petCount, 1] = "Species: " + PetSpecies;
