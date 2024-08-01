@@ -8,6 +8,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        //creating characteristics for Animal
         string PetId;
         string PetSpecies;
         string age;
@@ -19,13 +20,14 @@ internal class Program
         int MaxPet = 6;
         string readresult;
         string MenuResponse;
+        //Array to store the animal.
         string[,] OurAnimal = new string[MaxPet, 6];
         for (int i = 0; i < MaxPet; i++)
-        {
+        {// Loop to store the sample data for teting.For(1)
             switch (i)
             {
                 case 1:
-                    PetId = "D1";
+                    PetId = "D1;
                     PetSpecies = "Dog";
                     age = "01";
                     desc_ofPersonality = "Playable and cute ";
@@ -56,14 +58,16 @@ internal class Program
                     petsNickname = "";
                     break;
             }
+            //stores the data according to the for loop and switch cases.
             OurAnimal[i, 0] = "ID #: " + PetId;
             OurAnimal[i, 1] = "Species: " + PetSpecies;
             OurAnimal[i, 2] = "Age: " + age;
             OurAnimal[i, 3] = "Physical description: " + desc_ofPhysicalAppearance;
             OurAnimal[i, 4] = "Personality: " + desc_ofPersonality;
             OurAnimal[i, 5] = "Nickname: " + petsNickname;
-        }
+        }// first For loop ends here [for(1)]
         do {
+            // this do-while loop runs till the user enters exit or "9".
             Console.Clear();
             Console.WriteLine("1. List all of our current pet information.");
             Console.WriteLine("2. Assign values to the ourAnimals array fields.");
@@ -73,6 +77,7 @@ internal class Program
             Console.WriteLine("6. Edit an animal’s personality description.");
             Console.WriteLine("7. Display all cats with a specified characteristic.");
             Console.WriteLine("8. Display all dogs with a specified characteristic");
+            Console.WriteLine("9.Exit");
 
 
             Console.WriteLine("Enter the options to continue ");
@@ -100,6 +105,7 @@ internal class Program
 
                 case "2":
                     int petCount = 0;
+                    // The variable petcount is used to store the Vacancies for the pet.Reference Line.193
                  bool validEntry=false;
                     for (int i = 0; i < MaxPet; i++)
                     {
@@ -109,8 +115,9 @@ internal class Program
                         }
                     }
                         do
-                        {
-                            do
+                    { //petCount < MaxPet && validEntry == false
+                        //runs till the the above condition is false 😏😏
+                        do
                             {
                                 Console.WriteLine("enter species of animal");
                                 PetSpecies = Console.ReadLine().ToLower().Trim();
@@ -137,9 +144,8 @@ internal class Program
                                 else
                                 validEntry = false;
                             Console.WriteLine("invalid!!!");
-
-                        }
-                        while (validEntry == false);
+                            }
+                            while (validEntry == false);
 
                             PetId = PetSpecies.Substring(0, 1) + petCount;
 
@@ -165,6 +171,7 @@ internal class Program
                                 else desc_ofPersonality = "tbd";
 
                             } while (desc_ofPersonality == "");
+
                             do
                             {
                                 Console.WriteLine("enter animals petname or nickname");
@@ -184,7 +191,8 @@ internal class Program
                             }
                             else validEntry = true;
 
-                     
+                     //The petcount is used here reference .Line 108.
+                     //stores the data according to the petcount.
                         OurAnimal[petCount, 0] = "ID #: " + PetId;
                         OurAnimal[petCount, 1] = "Species: " + PetSpecies;
                         OurAnimal[petCount, 2] = "Age: " + age;
